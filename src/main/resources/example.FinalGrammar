@@ -1,0 +1,72 @@
+
+C I am a comment
+CHARACTER f*128
+CHARACTER ( len = 8 ) date
+CHARACTER ( len = 10 ) time
+call date_and_time ( date, time )
+ write ( *, '(a8,2x,a10)' ) date, time
+ write ( *, '(a)' ) ' '
+ write ( *, '(a)' ) 'HELLO:'
+ write ( *, '(a)' ) '  FORTRAN77 version'
+ write ( *, '(a)' ) '  This is how to say:'
+ write ( *, '(a)' ) ' '
+ write ( *, '(a)' ) ' '
+ call timestamp ( )
+ call timestamp ( )
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'RANDOM_NUMBERS'
+      write ( *, '(a)' ) '  FORTRAN77 version'
+      write ( *, '(a)' ) '  Generate some random numbers.'
+
+      call test01 ( )
+      call test02 ( )
+      call test03 ( )
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'RANDOM_NUMBERS'
+      write ( *, '(a)' ) '  Normal end of execution.'
+
+      write ( *, '(a)' ) ' '
+      call timestamp ( )
+integer i
+      double precision r8_uniform_01
+      integer seed
+      integer seed_init
+
+      seed_init = 123456789
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TEST01'
+      write ( *, '(a)' ) '  R8_UNIFORM_01 computes pseudorandom values '
+
+      seed = seed_init
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,i12)' ) '  The initial seed is ', seed_init
+      write ( *, '(a)' ) ' '
+      C In this line it does not want to parse single letter only two
+      parameter ( na = 1000 )
+format ( na )
+      integer i
+      double precision r8_uniform_01
+      integer seed
+      integer seed_in
+      integer seed_out
+      double precision u(n)
+      double precision u_avg
+      double precision u_var
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TEST02'
+      write ( *, '(a)' ) '  R8_UNIFORM_01 computes a sequence of '
+      write ( *, '(a)' ) '  uniformly distributed pseudorandom numbers.'
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,i12)' ) '  Initial SEED = ', seed
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) '  First 10 values:'
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' )  '     I         Input        Output    R8_UNIFORM_01'
+      write ( *, '(a)' ) '                SEED          SEED'
+      write ( *, '(a)' ) ' '
